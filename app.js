@@ -8,6 +8,22 @@ const app = express();
 
 app.use(bodyParser.json());
 
+//serve home html
+app.get('/',(req,res)=>{
+    res.sendFile(path.join(_dirname,'index.html'));
+});
+
+//get all the to do's in the database collection
+app.get('/getTodos',(req,res)=>{
+    db.getDB().collection(collection).find({}).toArray((err,documents)=>{
+        if(err)
+            console.log(err);
+        else{
+            res.json(documents);
+        }
+    });
+});
+
 db.connect((err)=>{
     // If err unable to connect to database
     // End application
