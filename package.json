@@ -1,0 +1,27 @@
+{
+  "name": "MongoDBPratice",
+  "version": "1.0.0",
+  "description": "This follows a tutorial I found to create a simple to do list with mongodb",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cmoconnor0823/MongoDBPratice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cmoconnor0823/MongoDBPratice/issues"
+  },
+  "homepage": "https://github.com/Cmoconnor0823/MongoDBPratice#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.3.1",
+    "nodemon": "^1.19.1",
+    "path": "^0.12.7"
+  }
+}
