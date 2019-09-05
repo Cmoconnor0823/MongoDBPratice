@@ -1,18 +1,21 @@
 const MongoClient = require("mongodb").MongoClient;
 const ObjectID = require("mongodb").ObjectID;
+// insert the name of the database here
 const dbname = "crud_mongodb";
+// location of database
 const url = "mongodb://localhost:27017";
+// options for mongo
 const mongoOptions = { useNewUrlParser: true };
 
 const state = {
     db: null
 };
 
-const connect = (cb) => {
+const connect = (cb) =>{
     if (state.db)
         cb();
-    else {
-        MongoClient.connect(url, mongoOptions, (er, client) => {
+    else{
+        MongoClient.connect(url,mongoOptions,(err, client)=>{
             if (err)
                 cb(err);
             else {
