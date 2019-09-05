@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 //serve home html
 app.get('/',(req,res)=>{
-    res.sendFile(path.join(_dirname,'index.html'));
+    res.sendFile(path.join(__dirname,'index.html'));
 });
 
 //get all the to do's in the database collection
@@ -18,11 +18,14 @@ app.get('/getTodos',(req,res)=>{
     db.getDB().collection(collection).find({}).toArray((err,documents)=>{
         if(err)
             console.log(err);
+            //later add a error visable to user
         else{
             res.json(documents);
         }
     });
 });
+
+
 
 db.connect((err)=>{
     // If err unable to connect to database
